@@ -54,6 +54,92 @@ The Jwt access token consists of
 - [x] Payload: DATA
 - [x] Verify Signature
 
+In this example only two roles are provided(Admin & User). But in real life different organization comes with different roles and security.
+
+Admin has the right to access all user by last name, or with out any condition access all user,update and delete the particular user based on their id.
+
+3. Access user by last name.(ADMIN)
+- [x] http://ipaddress:portno/jwt-authentication/api/users/findbylastname/{lastname}
+lastname: PathParam
+
+Method: GET
+Response Body:
+[
+    {
+        "id": 1,
+        "firstName": "ABC",
+        "lastName": "Saha",
+        "emailId": "abc@gmail.com",
+        "password": "IkyjQpfgO95bdkvq0I5O8eFS1VPjhfCOWyqh2D2VoRc=",
+        "company": "Microsoft",
+        "roles": [
+            "User",
+            "Admin"
+        ],
+        "createdDate": "Sep 24, 2018",
+        "createdTime": "12:34:37 PM",
+        "lastUpdatedDate": "Sep 24, 2018",
+        "lastUpdatedTime": "12:53:36 PM"
+    }
+]
+
+4. Access all user.(ADMIN)
+- [x] http://ipaddress:portno/jwt-authentication/api/users
+
+Method: GET
+Response Body:
+[
+    {
+        "id": 1,
+        "firstName": "ABC",
+        "lastName": "Saha",
+        "emailId": "abc@gmail.com",
+        "password": "IkyjQpfgO95bdkvq0I5O8eFS1VPjhfCOWyqh2D2VoRc=",
+        "company": "Microsoft",
+        "roles": [
+            "User",
+            "Admin"
+        ],
+        "createdDate": "Sep 24, 2018",
+        "createdTime": "12:34:37 PM",
+        "lastUpdatedDate": "Sep 24, 2018",
+        "lastUpdatedTime": "12:53:36 PM"
+    },
+    {
+        "id": 2,
+        "firstName": "Shee",
+        "lastName": "Bhakta",
+        "emailId": "shee20@gmail.com",
+        "password": "oYptu+zgLuWeaSgbOZ0j+dkeoim7kmhRB2W2UT/n4Ms=",
+        "company": "Cloud Lending Solution",
+        "roles": [
+            "User"
+        ],
+        "createdDate": "Sep 24, 2018",
+        "createdTime": "12:57:32 PM",
+        "lastUpdatedDate": "Sep 24, 2018",
+        "lastUpdatedTime": "12:57:32 PM"
+    }
+]
+
+5. Update user by particular id.(ADMIN)
+- [x] http://ipaddress:portno/jwt-authentication/api/users/update/{userId}
+userId: PathParam
+
+Method: PUT
+Request Body:
+{
+    "firstName" : "ABC",
+    "lastName" : "Saha",
+    "company": "Microsoft",
+    "roles"		 : ["Admin","User"]
+}
+
+Response Body:
+{
+    "success": 1,
+    "message": "userId : 1 updated successfully"
+}
 
 
 
