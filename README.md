@@ -50,9 +50,9 @@ Response body:
 }
 
 The Jwt access token consists of 
--[x] Header: ALGORITHM & TOKEN TYPE.
--[x] Payload: DATA
--[x] Verify Signature
+- [x] Header: ALGORITHM & TOKEN TYPE.
+- [x] Payload: DATA
+- [x] Verify Signature
 
 
 
