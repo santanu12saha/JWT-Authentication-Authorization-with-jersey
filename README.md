@@ -141,5 +141,54 @@ Response Body:
     "message": "userId : 1 updated successfully"
 }
 
+6. Delete user by particular id.(ADMIN)
+- [x] http://ipaddress:portno/jwt-authentication/api/users/delete/{userId}
+userId: PathParam
+
+Method: DELETE
+Response Body:
+
+{
+    "success": 1,
+    "message": "userId : 3 deleted successfully"
+}
+
+User has the right to access his/her particular account and update it.
+
+7. Access user by particular id.(User)
+- [x] http://ippaddress:portno/jwt-authentication/api/users/{userId}
+userId: PathParam
+
+Method: GET
+Response Body: 
+{
+    "id": 2,
+    "firstName": "Shee",
+    "lastName": "Bhat",
+    "emailId": "sheeBhat20@gmail.com",
+    "company": "Cloud Lending Solution",
+    "roles": [
+        "User"
+    ]
+}
+
+8. Update user by particular id.(User)
+- [x] http://ipaddress:portno/jwt-authentication/api/users/update/{userId}
+userId: PathParam
+
+Method: PUT
+Request Body:
+{
+    "firstName" : "ABC1",
+    "lastName" : "Saha1",
+    "company": "Microsoft11",
+    "roles"		 : ["User"]
+}
+
+Response Body:
+{
+    "success": 1,
+    "message": "userId : 1 updated successfully"
+}
 
 
